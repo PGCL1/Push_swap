@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/04/20 20:21:19 by glacroix         ###   ########.fr        #
+#    Updated: 2023/04/20 20:34:18 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,10 @@ LIBFT		= ./42Libft/libft.a
 #SRC & OBJS Details
 # **************************************************************************** #
 SRCS_PATH	= ./src/
-SRCS		= $(addprefix $(SRCS_PATH), $(SRCS))
+SRCS		= $(addprefix $(SRCS_PATH), $(SRC))
 SRC			= main.c
 DOT_O		= _objFiles/
-OBJS		= $(addprefix $(DOT_O)/, $(SRC:%.c=%.o))
+OBJS		= $(addprefix $(DOT_O), $(SRCS:%.c=%.o))
 
 #Makefile Cmds
 # **************************************************************************** #
@@ -61,9 +61,9 @@ $(DOT_O)/%.o: $(SRC_PATH)/%.c | $(DOT_O)
 #SRC Execution
 # **************************************************************************** #
 ${NAME}: ${OBJS}
-	@echo "\033[33m----Compiling lib----"
+	@echo "----Compiling lib----"
 	@make re -sC ./42Libft
 	@$(CC) $(CFLAGS) ${OBJS} $(INCLUDES) $(LIBFT) -o ${NAME}
-	@echo "\033[32mLibft Compiled! ᕦ(\033[31m♥\033[32m_\033[31m♥\033[32m)ᕤ\n"
-	@echo "\033[32mPush_swap Compiled! 	"
+	@echo "Libft Compiled!\n"
+	@echo "Push_swap Compiled!\n"
 

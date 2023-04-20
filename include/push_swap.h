@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/20 19:49:06 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/20 20:31:11 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "./42Libft/libft.h"
+#include "../42Libft/libft.h"
 
 
 #endif
