@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/04/20 20:52:41 by glacroix         ###   ########.fr        #
+#    Updated: 2023/04/20 22:09:03 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,55 +25,50 @@ WHITE  		= "\x1B[37m"
 # **************************************************************************** #
 NAME		= push_swap
 
-#Execution
-# **************************************************************************** #
-CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra
-DEGUB		= -g3 -fsanitize=address
-INCLUDES	= -Iinclude
-LIBFT		= ./42Libft/libft.a
-
 #SRC & OBJS Details
 # **************************************************************************** #
-SRCS_PATH	= ./src/
-SRCS		= $(addprefix $(SRCS_PATH), $(SRC))
-SRC			= main.c
-#DOT_O		= _objFiles/
-OBJS		= $(SRCS:%.c=%.o)
+SRCS		= srcs/main.c
+OBJS		= $(SRCS:%.c=objs/%.o)
+
+#Execution
+# **************************************************************************** #
+LIBFT		= 42Libft/libft.a
+CC			= gcc
+CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		+= -I include
+CFLAGS		+= -I 42Libft
+DEGUB		= -g3 -fsanitize=address
+
+#SRC Execution
+# **************************************************************************** #
+${NAME}: objs ${OBJS}
+	@echo $(YELLOW) "\n .........Compiling lib.........\n" $(RESET)
+	@make -sC 42Libft
+	@$(CC) $(CFLAGS) ${OBJS} $(LIBFT) -o ${NAME}
+	@echo $(GREEN) "       Push_swap Compiled!       \n" $(RESET)
 
 #Makefile Cmds
 # **************************************************************************** #
+objs:
+	@mkdir -p objs/srcs
+
+objs/%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 all: ${NAME}
 
 clean:
-	@make clean -sC ./42Libft
-	@rm -f ${OBJS}
+	@make clean -sC 42Libft
+	@rm -rf objs
 
 fclean: clean
-	@make fclean -sC ./42Libft
+	@make fclean -sC 42Libft
 	@rm -f $(NAME)
-#	@rm -rf $(DOT_O)
 	@echo $(RED) "\n >>>>>>>> Deleted all *.o and *.a! <<<<<<<< \n" $(RESET)
 
 re: fclean all
 
+
 re_bonus: fclean bonus
 
 .PHONY: all clean fclean re re_bonus bonus
-
-#Object Directory
-# **************************************************************************** #
-#$(DOT_O):
-#	@mkdir -p $(DOT_O)
-#
-#$(DOT_O)/%.o: $(SRC_PATH)/%.c | $(DOT_O)
-#	@$(CC) $(CFLAGS) -c $< -o $@
-
-#SRC Execution
-# **************************************************************************** #
-${NAME}: ${OBJS}
-	@echo $(YELLOW) "\n .........Compiling lib.........\n" $(RESET)
-	@make re -sC ./42Libft
-	@$(CC) $(CFLAGS) ${OBJS} $(INCLUDES) $(LIBFT) -o ${NAME}
-	@echo $(GREEN) "       Push_swap Compiled!       \n" $(RESET)
-

@@ -1,0 +1,45 @@
+### Colors ###
+
+#RESET	=	\033c
+GREEN	=	\033[1;32m
+RED		=	\033[0;31m
+CYAN	=	\033[0;36m
+WHITE	=	\033[0m
+
+NAME = push_swap
+
+SRCS =											\
+		srcs/main.c								\
+
+
+OBJS = $(SRCS:%.c=objs/%.o)
+
+LIB = 42Libft/libft.a
+
+CC = gcc
+CFLAGS	 = -Wall -Wextra -Werror
+CFLAGS	+= -I include
+CFLAGS	+= -I 42Libft
+
+$(NAME): objs $(OBJS)
+	@make -C 42Libft
+	@$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
+	@echo -e "$(CYAN) OLEE YOU $(WHITE)"
+
+objs:
+	@mkdir -p objs/srcs
+
+objs/%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+clean:
+	@make clean -C 42Libft
+	@rm -rf objs
+
+fclean: clean
+	@make fclean -C 42Libft
+	@rm -f $(NAME)
+
+re: fclean all
