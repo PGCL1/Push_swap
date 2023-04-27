@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/20 20:58:49 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:57:53 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@
 #define WHITE  		"\x1B[37m"
 
 typedef struct s_node {
-    int number;
+    int data;
     struct s_node * next;
 } t_node;
 
+t_node *head;
+
+void node_insert(int data);
+void node_print();
 
 #endif

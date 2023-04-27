@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/20 21:41:56 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:58:27 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 int main()
 {
+	head = NULL;
+	node_insert(6);
+	node_insert(3);
+	node_insert(4);
+	node_insert(5);
+	node_print();
 	return (1);
 }
