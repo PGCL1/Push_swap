@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:29:36 by glacroix         ###   ########.fr       */
+/*   Created: 2022/09/26 11:05:47 by glacroix          #+#    #+#             */
+/*   Updated: 2023/03/24 17:17:05 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
-int main()
+void	*ft_calloc(size_t count, size_t size)
 {
-	head = NULL;//empty list
-	node_insert_beginning(6);
-	node_delete_nth_pos(1);
-	node_insert_nth_pos(4, 1);
-	node_insert_nth_pos(5, 2);
-	node_insert_nth_pos(6, 3);
-	node_delete_nth_pos(3);
-	node_insert_nth_pos(7, 3);
-	node_delete_nth_pos(3);
-	
-	node_print();
-	return (1);
+	unsigned char	*s;
+
+	s = (unsigned char *)malloc(count * size);
+	if (s == 0)
+		return (0);
+	ft_bzero(s, count * size);
+	return (s);
 }

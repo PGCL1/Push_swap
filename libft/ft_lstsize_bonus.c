@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:29:36 by glacroix         ###   ########.fr       */
+/*   Created: 2022/10/06 14:19:55 by glacroix          #+#    #+#             */
+/*   Updated: 2023/03/24 17:35:52 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
-int main()
+int	ft_lstsize(t_list *lst)
 {
-	head = NULL;//empty list
-	node_insert_beginning(6);
-	node_delete_nth_pos(1);
-	node_insert_nth_pos(4, 1);
-	node_insert_nth_pos(5, 2);
-	node_insert_nth_pos(6, 3);
-	node_delete_nth_pos(3);
-	node_insert_nth_pos(7, 3);
-	node_delete_nth_pos(3);
-	
-	node_print();
-	return (1);
+	int	x;
+
+	x = 0;
+	if (!lst)
+		return (0);
+	while (lst != NULL)
+	{
+		lst = lst -> next;
+		x++;
+	}
+	return (x);
 }

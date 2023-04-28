@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:29:36 by glacroix         ###   ########.fr       */
+/*   Created: 2022/09/21 12:47:25 by glacroix          #+#    #+#             */
+/*   Updated: 2023/03/24 17:31:26 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
-int main()
+char	*ft_strnstr(char *str, char *to_find, size_t len)
 {
-	head = NULL;//empty list
-	node_insert_beginning(6);
-	node_delete_nth_pos(1);
-	node_insert_nth_pos(4, 1);
-	node_insert_nth_pos(5, 2);
-	node_insert_nth_pos(6, 3);
-	node_delete_nth_pos(3);
-	node_insert_nth_pos(7, 3);
-	node_delete_nth_pos(3);
-	
-	node_print();
-	return (1);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (to_find[0] == '\0')
+		return ((char *)str);
+	while (str[i] != 0 && i < len)
+	{
+		j = 0;
+		while (str[i + j] == to_find[j] && to_find[j] != 0)
+		{
+			if (to_find[j + 1] == 0 && (i + j) < len)
+				return (&(str[i]));
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }

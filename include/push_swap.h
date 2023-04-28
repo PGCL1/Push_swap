@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/27 20:57:53 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:26:11 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../42Libft/libft.h"
+#include "../libft/libft.h"
 
 #define RESET  		"\x1B[0m"
 #define RED  		"\x1B[31m"
@@ -34,7 +34,9 @@ typedef struct s_node {
 
 t_node *head;
 
-void node_insert(int data);
+void node_insert_beginning(int data);
 void node_print();
+void node_insert_nth_pos(int data, int position);
+void node_delete_nth_pos(int position);
 
 #endif

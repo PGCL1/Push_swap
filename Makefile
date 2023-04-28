@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/04/20 22:09:03 by glacroix         ###   ########.fr        #
+#    Updated: 2023/04/28 15:20:55 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,23 +27,24 @@ NAME		= push_swap
 
 #SRC & OBJS Details
 # **************************************************************************** #
-SRCS		= srcs/main.c
+SRCS		= srcs/main.c \
+				srcs/list.c
 OBJS		= $(SRCS:%.c=objs/%.o)
 
 #Execution
 # **************************************************************************** #
-LIBFT		= 42Libft/libft.a
+LIBFT		= libft/libft.a
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
 CFLAGS		+= -I include
-CFLAGS		+= -I 42Libft
+CFLAGS		+= -I libft
 DEGUB		= -g3 -fsanitize=address
 
 #SRC Execution
 # **************************************************************************** #
 ${NAME}: objs ${OBJS}
 	@echo $(YELLOW) "\n .........Compiling lib.........\n" $(RESET)
-	@make -sC 42Libft
+	@make -sC libft
 	@$(CC) $(CFLAGS) ${OBJS} $(LIBFT) -o ${NAME}
 	@echo $(GREEN) "       Push_swap Compiled!       \n" $(RESET)
 
@@ -58,11 +59,11 @@ objs/%.o: %.c
 all: ${NAME}
 
 clean:
-	@make clean -sC 42Libft
+	@make clean -sC libft
 	@rm -rf objs
 
 fclean: clean
-	@make fclean -sC 42Libft
+	@make fclean -sC libft
 	@rm -f $(NAME)
 	@echo $(RED) "\n >>>>>>>> Deleted all *.o and *.a! <<<<<<<< \n" $(RESET)
 

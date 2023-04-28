@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:29:36 by glacroix         ###   ########.fr       */
+/*   Created: 2022/09/14 15:01:23 by glacroix          #+#    #+#             */
+/*   Updated: 2023/03/24 17:24:55 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
-int main()
+void	*ft_memmove(void *dst, void *src, size_t len)
 {
-	head = NULL;//empty list
-	node_insert_beginning(6);
-	node_delete_nth_pos(1);
-	node_insert_nth_pos(4, 1);
-	node_insert_nth_pos(5, 2);
-	node_insert_nth_pos(6, 3);
-	node_delete_nth_pos(3);
-	node_insert_nth_pos(7, 3);
-	node_delete_nth_pos(3);
-	
-	node_print();
-	return (1);
+	if (dst < src)
+		return (ft_memcpy(dst, src, len));
+	if (dst > src)
+	{
+		while (len > 0)
+		{
+			((unsigned char *)dst)[len - 1] = ((unsigned char *)src)[len -1];
+			len--;
+		}
+	}
+	return (dst);
 }

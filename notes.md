@@ -11,8 +11,21 @@ There are 3 types of linked lists:
 
 In order to access the first node of the list, we need a pointer that points to the first element of the linked list. This pointer is often called the "head". This pointer only contains the address of the first node of the list.
 
+
+***IMPORTANT***
+When you use a linked list, you can make copies of it and use it for different endeavors. Whereas, if you would use a struct and use it for different things, you would be constantly changing your struct; resulting into errors.
+
+Linked lists can be use in such way because they are self referencing; when you create a copy of a linked list: the structure is the same but the linked lists you created are different.
+
 **Pointers**
 
 When we access a pointer variable (i.e. *p):
 	if we do *p = X we are dereferencing the pointer and assigning to it the value X
 	if we do p = &X we are assigning to the pointer p the address of X
+
+**Application's Memory**
+
+Heap (not fixed)		free storage 
+Stack (fixed)			stores all the function execution variables
+Static/Global (fixed)	stores the variables that will live during the entire program
+Code (fixed)			stores the program's instructions

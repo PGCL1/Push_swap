@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:29:36 by glacroix         ###   ########.fr       */
+/*   Created: 2022/09/20 17:20:00 by glacroix          #+#    #+#             */
+/*   Updated: 2023/03/24 17:24:33 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "libft.h"
 
-int main()
+int	ft_memcmp(void *s1, void *s2, size_t n)
 {
-	head = NULL;//empty list
-	node_insert_beginning(6);
-	node_delete_nth_pos(1);
-	node_insert_nth_pos(4, 1);
-	node_insert_nth_pos(5, 2);
-	node_insert_nth_pos(6, 3);
-	node_delete_nth_pos(3);
-	node_insert_nth_pos(7, 3);
-	node_delete_nth_pos(3);
-	
-	node_print();
-	return (1);
+	size_t			p;
+	unsigned char	*st1;
+	unsigned char	*st2;
+
+	st1 = ((unsigned char *)s1);
+	st2 = ((unsigned char *)s2);
+	p = 0;
+	while (p < n)
+	{
+		if (st1[p] != st2[p])
+			return (st1[p] - st2[p]);
+		p++;
+	}
+	return (0);
 }
