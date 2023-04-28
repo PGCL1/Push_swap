@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/29 00:12:22 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/29 01:07:00 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ void node_insert_beginning(int data);
 void node_print();
 void node_insert_nth_pos(int data, int position);
 void node_delete_nth_pos(int position);
+void node_print_reverse(t_node *list);
+void node_reverse(t_node *list);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:25:29 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/29 01:10:48 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,35 @@ void node_delete_nth_pos(int position)
 	free(temp2);
 }
 
+void node_reverse(t_node *list)
+{
+	//exit condition for the recursion
+	if (list->next == NULL)
+	{
+		head = list;
+		return;
+	}	
+	node_reverse(list->next);
+	t_node *aux = list->next;
+	aux->next = list;
+	list->next = NULL;
+}
+
+void node_print_reverse(t_node *list)
+{
+	if (list == NULL)
+		return;
+	node_print_reverse(list->next);
+	printf("%d -> ", list->data);
+}
+
 void node_print()
 {
 	t_node *temp;
 	temp = head;
 	while (temp != NULL)
 	{
-		printf("%d->", temp->data);
+		printf("%d -> ", temp->data);
 		temp = temp->next;
 	}
 	printf("NULL\n");
