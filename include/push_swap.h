@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/28 18:26:11 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/04/29 00:12:22 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 #define CAYN  		"\x1B[36m"
 #define WHITE  		"\x1B[37m"
 
-typedef struct s_node {
+typedef struct t_node {
     int data;
-    struct s_node * next;
+    struct t_node * next;
 } t_node;
 
 t_node *head;
