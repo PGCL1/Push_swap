@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/06 01:22:53 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:43:47 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,16 @@ int main(int argc, char **argv)
 	{
 		numbers_parsing(argc, argv);
 		node_print();
+		node_reverse(head); //what you put in stack
+		printf("\n");
+		node_print();
 /* 		node_print_adi(); */
 	}
 	return (0);
 }
+
+/*
+list of numbers 
+1 2 3 34 5 56 7 
+7 56 5 34 3 2 1 
+*/

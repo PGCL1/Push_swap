@@ -29,3 +29,11 @@ Heap (not fixed)		free storage
 Stack (fixed)			stores all the function execution variables
 Static/Global (fixed)	stores the variables that will live during the entire program
 Code (fixed)			stores the program's instructions
+
+**Stacks**
+
+A stack is a list or collection with the restriction that insertion and deletion can be performed only from one end called the top. Stacks are used for recursion and function calls in a program. Another application of stacks is used for undo in a text editor.
+	Operation:
+		push is insertion
+		pop is removing the most recent item from the stack
+		top looks for the top element of the stack

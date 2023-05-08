@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/05 23:12:44 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:32:03 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,16 @@ typedef struct t_err {
 	int mix;
 } t_err;
 
-void	node_insert_beginning(int data);
-void	node_print();
-void	node_insert_nth_pos(int data, int position);
-void	node_delete_nth_pos(int position);
-void	node_print_reverse(t_node *list);
-void	node_reverse(t_node *list);
-void	free_pointer2pointer(char **ptr);
-void	numbers_parsing(int argc, char **argv);
-void	node_print_adi();
+void		node_insert_beginning(int data);
+void		node_print();
+void		node_insert_nth_pos(int data, int position);
+void		node_delete_nth_pos(int position);
+void		node_print_reverse(t_node *list);
+void		node_reverse(t_node *list);
+void		free_pointer2pointer(char **ptr);
+void		numbers_parsing(int argc, char **argv);
+void		node_print_adi();
+long int	ft_atol(char *str);
+int			numbers_over_max_min(long int result);
 
 #endif

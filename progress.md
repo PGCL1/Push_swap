@@ -7,8 +7,25 @@ Improvements:
 	- t_node *head cannot be declared as a global variable, need to fix functions
 	- function to check if there are duplicated in list; Matheus has method of O(n) or O(1)
 		people refer to "sorting" to remove duplicates
-	- problem with this conditon 
-	/a.out "1 23 +  4" 5 "7 -5 4 3" | cat -e
 
 Content:
 	video of big O notation
+	hashtables to verify for duplicates
+
+
+
+list of numbers
+1 100
+2 400
+3 500
+4 200
+1 not possible
+o(n)
+
+typedef struct t_err {
+	int minus;
+	int plus;
+	int mix;
+} t_err;
+
+ft_memset(&err, 0, sizeof(t_err))
