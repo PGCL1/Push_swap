@@ -4,9 +4,11 @@
 4. corrected error function (if string is passed with a lonely sign, throws error)
 
 Improvements:
-	- t_node *head cannot be declared as a global variable, need to fix functions
+	- t_stack *head cannot be declared as a global variable, need to fix functions
 	- function to check if there are duplicated in list; Matheus has method of O(n) or O(1)
 		people refer to "sorting" to remove duplicates
+	- redo creation of list so that we use listaddback, listlast, listnew from libft -> to stop using global head which is forbidden and simplify code readability
+		apart from that all parsing.c functions are perfect
 
 Content:
 	video of big O notation

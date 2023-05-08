@@ -6,51 +6,11 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:10:00 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/08 15:43:47 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:02:53 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-//checking for errors in argv[i] multiples signes -- +- -+
-int error_check(char *str)
-{
-	int errors_min = 0;
-	int errors_plus = 0;
-	int errors_mix = 0;
-	while (*str)
-	{
-		if (*str == '-' || *str == '+')
-			errors_mix++;
-		if (*str == '-')
-			errors_min++;
-		else if (*str == '+')
-			errors_plus++;
-		str++;
-	}
-	if (errors_mix > 1 || errors_min > 1 || errors_plus > 1)
-		return (1);
-	return (0);
-}
-
-// int error_check(char *str)
-//{
-//	t_err err;
-//	ft_memset(&err, 0, /*ask pepe*/ 1);
-//	while (*str)
-//	{
-//		if (*str == '-' && *str == '+')
-//			err.mix++;
-//		if (*str == '-')
-//			err.minus++;
-//		else if (*str == '+')
-//			err.plus++;
-//		str++;
-//	}
-//	if (err.mix > 1 || err.minus > 1 || err.plus > 1)
-//		return (1);
-//	return (0);
-//} */
 
 int main(int argc, char **argv)
 {
@@ -68,9 +28,3 @@ int main(int argc, char **argv)
 	}
 	return (0);
 }
-
-/*
-list of numbers 
-1 2 3 34 5 56 7 
-7 56 5 34 3 2 1 
-*/

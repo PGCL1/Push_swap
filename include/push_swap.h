@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/08 16:32:03 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:03:47 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,12 @@
 #define CAYN  		"\x1B[36m"
 #define WHITE  		"\x1B[37m"
 
-typedef struct t_node {
+typedef struct t_stack {
     int data;
-    struct t_node *next;
-} t_node;
+    struct t_stack *next;
+} t_stack;
 
-t_node *head;
-
+t_stack *head;
 typedef struct t_err {
 	int minus;
 	int plus;
@@ -44,8 +43,8 @@ void		node_insert_beginning(int data);
 void		node_print();
 void		node_insert_nth_pos(int data, int position);
 void		node_delete_nth_pos(int position);
-void		node_print_reverse(t_node *list);
-void		node_reverse(t_node *list);
+void		node_print_reverse(t_stack *list);
+void		node_reverse(t_stack *list);
 void		free_pointer2pointer(char **ptr);
 void		numbers_parsing(int argc, char **argv);
 void		node_print_adi();
