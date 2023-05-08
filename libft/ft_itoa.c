@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 17:51:13 by glacroix          #+#    #+#             */
-/*   Updated: 2023/03/24 17:53:51 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/02 21:27:07 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,9 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+
+/*
+int to str
+result = result * 10 + str[i] - 0;
+
+*/

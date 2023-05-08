@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/04/28 15:20:55 by glacroix         ###   ########.fr        #
+#    Updated: 2023/05/06 01:19:47 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ NAME		= push_swap
 #SRC & OBJS Details
 # **************************************************************************** #
 SRCS		= srcs/main.c \
-				srcs/list.c
+				srcs/list.c\
+				srcs/memory.c\
+				srcs/parsing.c
 OBJS		= $(SRCS:%.c=objs/%.o)
 
 #Execution

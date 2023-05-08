@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/29 01:07:00 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/05 23:12:44 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,25 @@
 
 typedef struct t_node {
     int data;
-    struct t_node * next;
+    struct t_node *next;
 } t_node;
 
 t_node *head;
 
-void node_insert_beginning(int data);
-void node_print();
-void node_insert_nth_pos(int data, int position);
-void node_delete_nth_pos(int position);
-void node_print_reverse(t_node *list);
-void node_reverse(t_node *list);
+typedef struct t_err {
+	int minus;
+	int plus;
+	int mix;
+} t_err;
+
+void	node_insert_beginning(int data);
+void	node_print();
+void	node_insert_nth_pos(int data, int position);
+void	node_delete_nth_pos(int position);
+void	node_print_reverse(t_node *list);
+void	node_reverse(t_node *list);
+void	free_pointer2pointer(char **ptr);
+void	numbers_parsing(int argc, char **argv);
+void	node_print_adi();
 
 #endif

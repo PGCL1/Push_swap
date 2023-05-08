@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/29 01:10:48 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/05 23:15:26 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,19 @@ void node_print()
 	while (temp != NULL)
 	{
 		printf("%d -> ", temp->data);
+		temp = temp->next;
+	}
+	printf("NULL\n");
+	return;
+}
+
+void node_print_adi()
+{
+	t_node *temp;
+	temp = head;
+	while (temp != NULL)
+	{
+		printf("%p is the address of %d\n", &temp->data, temp->data);
 		temp = temp->next;
 	}
 	printf("NULL\n");
