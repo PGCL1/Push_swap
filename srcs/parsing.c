@@ -6,13 +6,13 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:39:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/08 17:02:39 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:59:59 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int numbers_verified(char *str)
+int	numbers_verified(char *str)
 {
 	while (*str)
 	{
@@ -23,7 +23,7 @@ int numbers_verified(char *str)
 	return (0);
 }
 
-int numbers_error(char *str)
+int	numbers_error(char *str)
 {
 	if (*str != '-' && *str != '+' && numbers_verified(str))
 		return (1);
@@ -31,7 +31,7 @@ int numbers_error(char *str)
 	{
 		if (*str == '-' && numbers_verified(str + 1))
 			return (1);
-		if ((*str == '-' || *str == '+') && (*(str + 1) = 32))
+		if ((*str == '-' || *str == '+') && (*(str + 1) == 32))
 			return (1);
 		if (*str == '+' && numbers_verified(str + 1))
 			return (1);
@@ -40,7 +40,7 @@ int numbers_error(char *str)
 	return (0);
 }
 
-int numbers_over_max_min(long int result)
+int	numbers_over(long int result)
 {
 	if (result > INT_MAX)
 		return (1);
@@ -73,30 +73,31 @@ long int	ft_atol(char *str)
 	return ((long int) result);
 }
 
-void numbers_parsing(int argc, char **argv)
+void	numbers_parsing(int argc, char **argv, t_stack **a)
 {
 	int		i;
+	int		j;
 	char	**args;
-	
+
 	i = 0;
 	while (++i < argc)
 	{
 		if (ft_strncmp(argv[i], " ", ft_strlen(argv[i])))
 		{
 			args = ft_split(argv[i], 32);
-			int j = -1;
+			j = -1;
 			while (args[++j])
 			{
-				if (numbers_error(args[j]) || numbers_over_max_min(ft_atol(args[j])))
+				if (numbers_error(args[j]) || numbers_over(ft_atol(args[j])))
 				{
 					ft_putstr_fd("Error\n", 2);
 					exit(EXIT_FAILURE);
 				}
-				node_insert_beginning(ft_atol(args[j]));					
+				ft_lstadd_back_pw(a, ft_lstnew_pw(ft_atol(args[j])));
 			}
 			free_pointer2pointer(args);
 		}
 		else
-			node_insert_beginning(ft_atol(argv[i]));
+			ft_lstadd_back_pw(a, ft_lstnew_pw(ft_atol(argv[i])));
 	}
 }

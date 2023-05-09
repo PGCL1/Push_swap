@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:35:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/03/24 17:36:45 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:10:20 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*t;
+	t_list	*temp;
 
-	t = lst;
+	temp = lst;
 	if (!lst)
 		return (NULL);
-	while (t)
+	while (temp)
 	{
-		if (!(t -> next))
-			return (t);
-		t = t -> next;
+		if (!(temp->next))
+			return (temp);
+		temp = temp->next;
 	}
-	return (t);
+	return (temp);
 }

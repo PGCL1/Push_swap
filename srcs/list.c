@@ -6,99 +6,65 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/08 17:03:47 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:47:47 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void node_insert_beginning(int data)
+void	ft_lstadd_back_pw(t_stack **lst, t_stack *new)
 {
-	t_stack *temp;
-
-	temp = malloc(sizeof(t_stack));
-	temp->data = data;
-	temp->next = head;
-	head = temp;	
+	if (!*lst)
+		*lst = new;
+	else
+		ft_lstlast_pw(*lst)->next = new;
 }
 
-void node_insert_nth_pos(int data, int position)
+t_stack	*ft_lstnew_pw(int content)
 {
-	t_stack *temp1 = malloc(sizeof(t_stack));
-	temp1->data = data;
-	temp1->next = NULL;
-	//if we want to insert the node at the beginning of the list
-	if (position == 1)
+	t_stack	*node;
+
+	node = (t_stack *)malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node->data = content;
+	node->next = NULL;
+	return (node);
+}
+
+t_stack	*ft_lstlast_pw(t_stack *lst)
+{
+	t_stack	*temp;
+
+	temp = lst;
+	if (!lst)
+		return (NULL);
+	while (temp)
 	{
-		temp1->next = head;
-		head = temp1;
-		return;
+		if (!(temp->next))
+			return (temp);
+		temp = temp->next;
 	}
-	t_stack *temp2 = head;
-	//to get to temp2 to the position where we want to do the replacement
-	for (int i = 0; i < position - 2; i++){
-		temp2 = temp2->next;
-	}
-	temp1->next = temp2->next;
-	temp2->next = temp1;
-	return;
+	return (temp);
 }
 
-void node_delete_nth_pos(int position)
+void	node_print(t_stack *a)
 {
-	t_stack *temp1 = head;
-	if (position == 1)
-	{
-		head = temp1->next;
-		free(temp1);
-		return;
- 	}
-	for (int i = 0; i < position - 2; i++){
-		temp1 = temp1->next;
-	}
-	t_stack *temp2 = temp1->next;
-	temp1->next = temp2->next;
-	free(temp2);
-}
+	t_stack	*temp;
 
-void node_reverse(t_stack *list)
-{
-	//exit condition for the recursion
-	if (list->next == NULL)
-	{
-		head = list;
-		return;
-	}	
-	node_reverse(list->next);
-	t_stack *aux = list->next;
-	aux->next = list;
-	list->next = NULL;
-}
-
-void node_print_reverse(t_stack *list)
-{
-	if (list == NULL)
-		return;
-	node_print_reverse(list->next);
-	printf("%d -> ", list->data);
-}
-
-void node_print()
-{
-	t_stack *temp;
-	temp = head;
+	temp = a;
 	while (temp != NULL)
 	{
 		printf("%d -> ", temp->data);
 		temp = temp->next;
 	}
 	printf("NULL\n");
-	return;
 }
 
-void node_print_adi()
+void	node_print_adi(void)
 {
-	t_stack *temp;
+	t_stack	*temp;
+
 	temp = head;
 	while (temp != NULL)
 	{
@@ -106,5 +72,4 @@ void node_print_adi()
 		temp = temp->next;
 	}
 	printf("NULL\n");
-	return;
 }
