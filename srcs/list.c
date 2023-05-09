@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/09 18:47:47 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:08:28 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	node_print(t_stack *a)
 	printf("NULL\n");
 }
 
-void	node_print_adi(void)
+void	node_print_adi(t_stack *a)
 {
 	t_stack	*temp;
 
-	temp = head;
+	temp = a;
 	while (temp != NULL)
 	{
 		printf("%p is the address of %d\n", &temp->data, temp->data);

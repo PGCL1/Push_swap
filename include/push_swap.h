@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/09 19:05:55 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:08:39 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		ft_push(t_stack **a, int content);
 void		free_pointer2pointer(char **ptr);
 void		node_print(t_stack *a);
 void		node_reverse(t_stack *list);
-void		node_print_adi(void);
+void		node_print_adi(t_stack *a);
 t_stack		*ft_lstnew_pw(int content);
 t_stack		*ft_lstlast_pw(t_stack *lst);
 void		ft_lstadd_back_pw(t_stack **lst, t_stack *new);
