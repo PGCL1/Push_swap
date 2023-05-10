@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:38:46 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/09 18:56:29 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/10 19:58:03 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,35 @@ void	free_pointer2pointer(char **ptr)
 	ptr = NULL;
 }
 
-void	ft_leaks(void);
+void	ft_leaks(void)
+{
+	system("leaks -q push_swap");
+}
+
+void stack_clean(t_stack **stack)
+{
+	t_stack *temp;
+
+	temp = *stack;
+	while (*stack != NULL)
+	{
+		temp = *stack;
+		(*stack) = (*stack)->next;
+		free(temp);
+	}
+}
+/*
+
+*stack
+--------------------------------
+|	|	|	|	|	|	|	|	|
+--------------------------------
+  1	  2   3   4   5   6   7   8
+
+
+*temp
+--------------------------------
+|	|	|	|	|	|	|	|	|
+--------------------------------
+  1	  2   3   4   5   6   7   8
+*/

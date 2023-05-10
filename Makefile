@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/05/06 01:19:47 by glacroix         ###   ########.fr        #
+#    Updated: 2023/05/10 19:47:49 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ NAME		= push_swap
 SRCS		= srcs/main.c \
 				srcs/list.c\
 				srcs/memory.c\
-				srcs/parsing.c
+				srcs/parsing.c\
+				srcs/error_check.c\
+
 OBJS		= $(SRCS:%.c=objs/%.o)
 
 #Execution
@@ -39,8 +41,8 @@ LIBFT		= libft/libft.a
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
 CFLAGS		+= -I include
-CFLAGS		+= -I libft
-DEGUB		= -g3 -fsanitize=address
+CFLAGS		+= -I libft -g3
+#DEGUB		= -g3 -fsanitize=address
 
 #SRC Execution
 # **************************************************************************** #

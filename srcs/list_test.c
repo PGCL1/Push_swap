@@ -6,13 +6,13 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:54:52 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/09 18:58:42 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:00:39 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void node_insert_beginning(int data)
+/* void node_insert_beginning(int data)
 {
 	t_stack *temp;
 
@@ -63,7 +63,7 @@ void node_delete_nth_pos(int position)
 
 void node_reverse(t_stack *list)
 {
-	//exit condition for the recursion
+	t_stack *head = NULL;
 	if (list->next == NULL)
 	{
 		head = list;
@@ -93,4 +93,4 @@ static void	ft_push(t_stack **a, int content)
 	node->data = content;
 	node->next = (*a);
 	(*a) = node;
-}
+} */
