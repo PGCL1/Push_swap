@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/10 19:27:02 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:19:03 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,28 @@ typedef struct t_stack {
 
 /*ft_bzero(&a, sizeof(t_stack))*/
 
-void		ft_push(t_stack **a, int content);
-void		free_pointer2pointer(char **ptr);
-void		ft_leaks(void);
-void		stack_clean(t_stack **stack);
-void		node_print(t_stack *a);
-void		node_reverse(t_stack *list);
-void		node_print_adi(t_stack *a);
-t_stack		*ft_lstnew_pw(int content);
-t_stack		*ft_lstlast_pw(t_stack *lst);
-void		ft_lstadd_back_pw(t_stack **lst, t_stack *new);
-void		numbers_parsing(int argc, char **argv, t_stack **a);
-int			numbers_over(long int result);
-int			numbers_verified(char *str);
-int			numbers_error(char *str);
-long int	ft_atol(char *str);
+void			ft_push(t_stack **a, int content);
+t_stack			ft_swap(t_stack **stack);
+
+void			free_pointer2pointer(char **ptr);
+void			ft_leaks(void);
+void			stack_clean(t_stack **stack);
+
+void			node_print(t_stack *stack);
+void			node_print_a(t_stack *stack);
+void			node_print_b(t_stack *stack);
+void			node_print_adi(t_stack *a);
+
+void			node_reverse(t_stack *list);
+
+t_stack			*ft_lstnew_pw(int content);
+t_stack			*ft_lstlast_pw(t_stack *lst);
+void			ft_lstadd_back_pw(t_stack **lst, t_stack *new);
+
+void			numbers_parsing(int argc, char **argv, t_stack **a);
+int				numbers_over(long int result);
+int				numbers_verified(char *str);
+int				numbers_error(char *str);
+long int		ft_atol(char *str);
 
 #endif

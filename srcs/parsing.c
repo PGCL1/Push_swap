@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:39:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/10 19:30:11 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:34:25 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,28 @@ long int	ft_atol(char *str)
 	return ((long int) result);
 }
 
+int check_duplicate(t_stack **a)
+{
+	t_stack *first;
+	t_stack *second;
+	t_stack *head;
+
+	head = (*a);
+	first = (*a);
+	while (first != NULL)
+	{
+		second = (*a)->next;
+		while (second != NULL)
+		{
+			if (first->data == second->data)	
+				return (1);
+			second = second->next;
+		}
+		first = first->next;	
+	}
+	return (0);
+}
+
 void	numbers_parsing(int argc, char **argv, t_stack **a)
 {
 	int		i;
@@ -54,6 +76,11 @@ void	numbers_parsing(int argc, char **argv, t_stack **a)
 				exit(EXIT_FAILURE);
 			}
 			ft_lstadd_back_pw(a, ft_lstnew_pw(ft_atol(args[j])));
+			if (check_duplicate(&(*a)) == 1)
+			{
+				ft_putstr_fd("Error\n", 2);
+				exit(EXIT_FAILURE);
+			}
 		}
 		free_pointer2pointer(args);
 	}

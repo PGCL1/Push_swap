@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/10 17:23:43 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/11 12:51:17 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,44 @@ t_stack	*ft_lstlast_pw(t_stack *lst)
 	return (temp);
 }
 
-void	node_print(t_stack *a)
+void	node_print(t_stack *stack)
 {
 	t_stack	*temp;
 
-	temp = a;
+	temp = stack;
 	while (temp != NULL)
 	{
-		printf("%d -> ", temp->data);
+		printf("%d\n", temp->data);
 		temp = temp->next;
 	}
-	printf("NULL\n");
+}
+
+void	node_print_a(t_stack *stack)
+{
+	t_stack	*temp;
+
+	temp = stack;
+	printf("-------------Stack A-------------\n");
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->data);
+		temp = temp->next;
+	}
+	printf("---------------END-------------\n\n");
+}
+
+void	node_print_b(t_stack *stack)
+{
+	t_stack	*temp;
+
+	temp = stack;
+	printf("-------------Stack B-------------\n");
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->data);
+		temp = temp->next;
+	}
+	printf("---------------END-------------\n\n");
 }
 
 void	node_print_adi(t_stack *a)
