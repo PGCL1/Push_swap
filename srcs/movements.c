@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 20:21:29 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 20:43:07 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void ft_reverse_rotate(t_stack **stack)
 	ft_lstadd_front_pw(&(*stack), temp);
 	while (aux->next->next != NULL)
 		aux = aux->next;
-	free(aux->next->next);
-/* 	free(temp); */
+	free(aux->next);
 	aux->next = NULL;
 }
