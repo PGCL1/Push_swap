@@ -5,10 +5,8 @@
 5. DONE redo creation of list so that we use listaddback, listlast, listnew from libft -> to stop using global head which is forbidden and simplify code readability
 
 Improvements:
-	- t_stack *head cannot be declared as a global variable, need to fix functions
-	- function to check if there are duplicated in list; Matheus has method of O(n) or O(1)
-		people refer to "sorting" to remove duplicates
-	- trying to create a hash_table to remove dupliactes
+	- root leak in revert rotate
+	- problem in parsing
 
 Content:
 	video of big O notation
