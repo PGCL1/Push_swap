@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 11:16:14 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:30:55 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct t_stack {
 /*------------------------------MOVEMENTS-------------------------------*/
 void			ft_push(t_stack **a, int content);
 void			ft_swap(t_stack **stack);
+void			ft_rotate(t_stack **stack);
 
 /*-------------------------------MEMORY---------------------------------*/
 void			free_pointer2pointer(char **ptr);

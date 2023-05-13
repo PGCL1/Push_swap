@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 11:32:17 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:30:34 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		numbers_parsing(argc, argv, &a);
 		printf("\t      BEFORE\t\n");
 		node_print_a(a);
-		ft_swap(&a);
+		ft_rotate(&a);
 		printf("\t      AFTER\t\n");
 		node_print_a(a);
 		stack_clean(&a);

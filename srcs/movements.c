@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 12:23:12 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 13:08:47 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,20 @@ void	ft_swap(t_stack **stack)
 	(*stack)->next->data = temp->data;
 	temp->data = (*stack)->data;
 	free(temp);
+}
+
+void	ft_rotate(t_stack **stack)
+{
+	t_stack *temp;
+	t_stack *head;
+	
+	head = (*stack);
+	temp = malloc(sizeof(t_stack));
+	if (!temp)
+		return;	
+	temp->data = (*stack)->data;
+	ft_lstadd_back_pw(stack, temp);
+	(*stack) = (*stack)->next;
+	free(head);
+	
 }

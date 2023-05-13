@@ -6,12 +6,21 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/11 12:51:17 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:57:31 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+/**
+ * The function adds a new node to the end of a linked list.
+ * 
+ * @param lst lst is a pointer to a pointer to the first node of a linked list of
+ * type t_stack. It is passed as a reference so that the function can modify the
+ * original pointer and update the linked list.
+ * @param new The "new" parameter is a pointer to a t_stack struct, which is the
+ * node that needs to be added to the end of the linked list.
+ */
 void	ft_lstadd_back_pw(t_stack **lst, t_stack *new)
 {
 	if (!*lst)
@@ -20,6 +29,16 @@ void	ft_lstadd_back_pw(t_stack **lst, t_stack *new)
 		ft_lstlast_pw(*lst)->next = new;
 }
 
+/**
+ * The function creates a new node for a stack with the given content.
+ * 
+ * @param content The parameter "content" is an integer value that represents the
+ * data to be stored in the newly created node of a stack.
+ * 
+ * @return The function `ft_lstnew_pw` is returning a pointer to a newly created
+ * node of type `t_stack` with the `data` field set to the value of the `content`
+ * parameter and the `next` field set to `NULL`.
+ */
 t_stack	*ft_lstnew_pw(int content)
 {
 	t_stack	*node;
@@ -32,6 +51,15 @@ t_stack	*ft_lstnew_pw(int content)
 	return (node);
 }
 
+/**
+ * The function returns the last element of a linked list.
+ * 
+ * @param lst The parameter `lst` is a pointer to the first node of a linked list
+ * of type `t_stack`.
+ * 
+ * @return The function `ft_lstlast_pw` returns a pointer to the last node of a
+ * linked list of type `t_stack`. If the linked list is empty, it returns `NULL`.
+ */
 t_stack	*ft_lstlast_pw(t_stack *lst)
 {
 	t_stack	*temp;
