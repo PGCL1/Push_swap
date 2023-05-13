@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 12:57:31 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 20:04:06 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ void	ft_lstadd_back_pw(t_stack **lst, t_stack *new)
 		*lst = new;
 	else
 		ft_lstlast_pw(*lst)->next = new;
+}
+
+void	ft_lstadd_front_pw(t_stack **lst, t_stack *new)
+{
+	if (!lst)
+		return ;
+	new -> next = *lst;
+	*lst = new;
 }
 
 /**

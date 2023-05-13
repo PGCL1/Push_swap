@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 13:08:47 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 20:16:54 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,22 @@ void	ft_rotate(t_stack **stack)
 	(*stack) = (*stack)->next;
 	free(head);
 	
+}
+
+void ft_reverse_rotate(t_stack **stack)
+{
+	t_stack *temp;
+	t_stack *aux;
+	
+	aux = (*stack);
+	temp = malloc(sizeof(t_stack));
+	if (!temp)
+		return;
+	temp->data = ft_lstlast_pw(*stack)->data;
+	ft_lstadd_front_pw(&(*stack), temp);
+	while (aux->next->next != NULL)
+		aux = aux->next;
+	free(aux->next->next);
+/* 	free(temp); */
+	aux->next = NULL;
 }

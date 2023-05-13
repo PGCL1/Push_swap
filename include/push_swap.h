@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 12:30:55 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 20:03:56 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 
 typedef struct t_stack {
 	int				data;
-	int				index;
 	struct t_stack	*next;
 }				t_stack;
 
@@ -39,6 +38,7 @@ typedef struct t_stack {
 void			ft_push(t_stack **a, int content);
 void			ft_swap(t_stack **stack);
 void			ft_rotate(t_stack **stack);
+void			ft_reverse_rotate(t_stack **stack);
 
 /*-------------------------------MEMORY---------------------------------*/
 void			free_pointer2pointer(char **ptr);
@@ -57,6 +57,7 @@ void			node_reverse(t_stack *list);
 t_stack			*ft_lstnew_pw(int content);
 t_stack			*ft_lstlast_pw(t_stack *lst);
 void			ft_lstadd_back_pw(t_stack **lst, t_stack *new);
+void			ft_lstadd_front_pw(t_stack **lst, t_stack *new);
 
 
 /*-------------------------------PARSING---------------------------------*/
