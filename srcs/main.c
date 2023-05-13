@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/12 18:31:11 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:10:35 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack	*b;
 
 	atexit(ft_leaks);
 	if (argc > 0)
 	{
 		a = NULL;
-		b = NULL;
 		numbers_parsing(argc, argv, &a);
 		node_print_a(a);
-/* 		node_print(ft_swap(&a)); */
 		stack_clean(&a);
 	}
 	return (0);

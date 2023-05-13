@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/11 18:19:03 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 10:21:30 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int				numbers_over(long int result);
 int				numbers_verified(char *str);
 int				numbers_error(char *str);
 long int		ft_atol(char *str);
+int				check_duplicate(t_stack **a);
 
 #endif
