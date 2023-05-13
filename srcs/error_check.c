@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:33:10 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/10 11:33:24 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 20:56:48 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	numbers_error(char *str)
 	{
 		if (*str == '-' && numbers_verified(str + 1))
 			return (1);
-		if ((*str == '-' || *str == '+') && (*(str + 1) == 32))
+		if ((*str == '-' || *str == '+') 
+			&& ((*(str + 1) == 32) || (*(str + 1) == '\0')))
 			return (1);
 		if (*str == '+' && numbers_verified(str + 1))
 			return (1);

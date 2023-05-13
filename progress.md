@@ -6,7 +6,18 @@
 
 Improvements:
 	- root leak in revert rotate
-	- problem in parsing
+	- problem in parsing 
+		when passing argv[i] = '-' it works
+
+Parsing error case:
+1 2 3 3
+1 2 --3
+1 2 -+3
+1 2 ++3
+1 2 +-3
+1 2 -3 "-4 - 6"
+1 2 -3 "-4 + 6"
+1 2 -3 "-4 + 6"
 
 Content:
 	video of big O notation
