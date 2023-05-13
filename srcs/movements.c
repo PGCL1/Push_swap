@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/11 14:32:15 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/13 12:23:12 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_push(t_stack **stack, int content)
 {
 	t_stack	*node;
 
-	node = (t_stack *)malloc(sizeof(t_stack));
+	node = malloc(sizeof(t_stack));
 	if (!node)
 		return;
 	node->data = content;
@@ -46,12 +46,16 @@ void	ft_push(t_stack **stack, int content)
 	(*stack) = node;
 }
 
-/* t_stack *ft_swap(t_stack **stack)
+void	ft_swap(t_stack **stack)
 {
-	t_stack *node;
-	t_stack *temp;
+	t_stack	*temp;
 	
-	temp = (*stack);
-	node = ft_lstnew_pw((*stack)->data);
-	return (node);
-} */
+	temp = malloc(sizeof(t_stack));
+	if (!temp)
+		return;	
+	temp->data = (*stack)->data;
+	(*stack)->data = (*stack)->next->data;
+	(*stack)->next->data = temp->data;
+	temp->data = (*stack)->data;
+	free(temp);
+}
