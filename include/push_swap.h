@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 20:03:56 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:10:42 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ typedef struct t_stack {
 /*ft_bzero(&a, sizeof(t_stack))*/
 
 /*------------------------------MOVEMENTS-------------------------------*/
-void			ft_push(t_stack **a, int content);
-void			ft_swap(t_stack **stack);
-void			ft_rotate(t_stack **stack);
-void			ft_reverse_rotate(t_stack **stack);
+int				ft_push(t_stack **stack, int content);
+int				ft_swap(t_stack **stack);
+int				ft_rotate(t_stack **stack);
+int				ft_reverse_rotate(t_stack **stack);
 
 /*-------------------------------MEMORY---------------------------------*/
 void			free_pointer2pointer(char **ptr);
@@ -58,6 +58,7 @@ t_stack			*ft_lstnew_pw(int content);
 t_stack			*ft_lstlast_pw(t_stack *lst);
 void			ft_lstadd_back_pw(t_stack **lst, t_stack *new);
 void			ft_lstadd_front_pw(t_stack **lst, t_stack *new);
+int				ft_lstsize_pw(t_stack *lst);
 
 
 /*-------------------------------PARSING---------------------------------*/
@@ -67,5 +68,9 @@ int				numbers_verified(char *str);
 int				numbers_error(char *str);
 long int		ft_atol(char *str);
 int				check_duplicate(t_stack **a);
+
+/*-------------------------------SORTING---------------------------------*/
+void			stack_sort(t_stack **a);
+void			stack_moves(t_stack **a, t_stack **b);
 
 #endif

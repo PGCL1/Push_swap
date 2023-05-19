@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/13 20:18:07 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:10:18 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,4 +135,19 @@ void	node_print_adi(t_stack *a)
 		temp = temp->next;
 	}
 	printf("NULL\n");
+}
+
+int	ft_lstsize_pw(t_stack *lst)
+{
+	int	x;
+
+	x = 0;
+	if (!lst)
+		return (0);
+	while (lst != NULL)
+	{
+		lst = lst -> next;
+		x++;
+	}
+	return (x);
 }

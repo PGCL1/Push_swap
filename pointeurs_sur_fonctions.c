@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   pointeurs_sur_fonctions.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/18 12:20:57 by glacroix         ###   ########.fr       */
+/*   Created: 2023/05/18 12:16:06 by glacroix          #+#    #+#             */
+/*   Updated: 2023/05/19 13:23:53 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "./include/push_swap.h"
 
-int	main(int argc, char **argv)
+int main()
 {
-	t_stack	*a;
-/* 	t_stack	*b; */
-
-	atexit(ft_leaks);
-	if (argc > 0)
-	{
-		a = NULL;
-/* 		b = NULL; */
-		numbers_parsing(argc, argv, &a);
-		stack_sort(&a);
-		node_print_a(a);
-		stack_clean(&a);
-	}
-	return (0);
+	void (*f)(char *, int);
+	f = &ft_putendl_fd;
+	f("hello", 2);
+	return(0);
 }
+
+
+
