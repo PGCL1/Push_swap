@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/19 13:37:16 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:56:08 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int	ft_push(t_stack **stack, int content)
 /* 
 int push_a(t_stack **stack_a, t_stack **stack_b)
 {
+	pop function (cancel node from stack a)
 	
+	push function
 }
 
 int push_b(t_stack **stack_a, t_stack **stack_b)
