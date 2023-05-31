@@ -5,7 +5,7 @@
 5. DONE redo creation of list so that we use listaddback, listlast, listnew from libft -> to stop using global head which is forbidden and simplify code readability
 
 Improvements:
-	- root leak in revert rotate
+	- segmentation fault in sort.c
 	- problem in parsing 
 		when passing argv[i] = '-' it works
 

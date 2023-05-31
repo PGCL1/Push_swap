@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/19 13:56:08 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/05/31 17:47:23 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,20 @@ int	ft_push(t_stack **stack, int content)
 	(*stack) = node;
 	return (0);
 }
-/* 
-int push_a(t_stack **stack_a, t_stack **stack_b)
+
+void push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	pop function (cancel node from stack a)
-	
-	push function
+	if (ft_push(&(*stack_b), (*stack_a)->data) == -1)
+		return;
+	(*stack_a) = (*stack_a)->next;
 }
 
-int push_b(t_stack **stack_a, t_stack **stack_b)
+void push_b(t_stack **stack_a, t_stack **stack_b)
 {
-	
-} */
+	if (ft_push(&(*stack_a), (*stack_b)->data) == -1)
+		return;
+	(*stack_b) = (*stack_b)->next;
+}
 
 int	ft_swap(t_stack **stack)
 {
@@ -63,10 +65,12 @@ int	ft_swap(t_stack **stack)
 	free(temp);
 	return (0);
 }
+
 /* 
 sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements.
 */
+
 void swap_a(t_stack **stack)
 {
 	if (ft_swap(stack) == -1)
@@ -78,6 +82,7 @@ void swap_a(t_stack **stack)
 sb (swap b): Swap the first 2 elements at the top of stack b.
 Do nothing if there is only one or no elements. 
 */
+
 void swap_b(t_stack **stack)
 {
 	if (ft_swap(stack) == -1)
@@ -120,7 +125,7 @@ The first element becomes the last one.
 */
 void rotate_a(t_stack **stack)
 {
-	if (ft_rotate(*stack) == -1)
+	if (ft_rotate(&(*stack)) == -1)
 		return;
 	ft_putstr_fd("ra\n", 1);
 }
@@ -131,7 +136,7 @@ The first element becomes the last one.
 */
 void rotate_b(t_stack **stack)
 {
-	if (ft_rotate(*stack) == -1)
+	if (ft_rotate(&(*stack)) == -1)
 		return;
 	ft_putstr_fd("rb\n", 1);
 }
@@ -141,7 +146,7 @@ rr : ra and rb at the same time.
 */
 void rotate_both(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_rotate(*stack_a) == -1 || ft_rotate(*stack_b) == -1)
+	if (ft_rotate(&(*stack_a)) == -1 || ft_rotate(&(*stack_b)) == -1)
 		return;
 	ft_putstr_fd("rr\n", 1);
 }
@@ -171,7 +176,7 @@ rra (reverse rotate a): Shift down all elements of stack a by 1. The last elemen
 */
 void reverse_rotate_a(t_stack **stack)
 {
-	if (ft_reverse_rotate(*stack) == -1)
+	if (ft_reverse_rotate(&(*stack)) == -1)
 		return;
 	ft_putstr_fd("rra\n", 1);
 }
@@ -181,7 +186,7 @@ rrb (reverse rotate b): Shift down all elements of stack b by 1. The last elemen
 */
 void reverse_rotate_b(t_stack **stack)
 {
-	if (ft_reverse_rotate(*stack) == -1)
+	if (ft_reverse_rotate(&(*stack)) == -1)
 		return;
 	ft_putstr_fd("rrb\n", 1);
 }
@@ -191,7 +196,7 @@ rrr : rra and rrb at the same time.
 */
 void reverse_rotate_both(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_reverse_rotate(*stack_a) == -1 || ft_reverse_rotate(*stack_b == -1))
+	if (ft_reverse_rotate(&(*stack_a)) == -1 || ft_reverse_rotate(&(*stack_b)) == -1)
 		return;
 	ft_putstr_fd("rrr\n", 1);
 }
