@@ -3,12 +3,34 @@
 3. DONE no leaks 
 4. DONE corrected error function (if string is passed with a lonely sign, throws error)
 5. DONE redo creation of list so that we use listaddback, listlast, listnew from libft -> to stop using global head which is forbidden and simplify code readability
-
+--------------------------------------------------------------
 Improvements:
-	- segmentation fault in sort.c
+	- segmentation fault in sort.c fixed
+	- problem with checker_Mac in both cases (counting - not normal && sorting - normal)
 	- problem in parsing 
 		when passing argv[i] = '-' it works
+--------------------------------------------------------------
 
+Learning:
+int stack_min_data(t_stack *copy)
+{
+	int		min;
+
+	min = copy->data;
+	while (copy->next != NULL)
+	{
+		if (min > copy->next->data)
+			min = copy->next->data;
+		copy = copy->next;		
+	}
+	return (min);
+}
+
+other function --> if (stack_min_data(*a) == (*a)->data)
+Here we are sending a copy of (*a) to stack_min_data
+if we sent (&(*a)) we would be sending the reference of (*a) and therefore be able to modify the contents of (*a);
+
+--------------------------------------------------------------
 Parsing error case:
 1 2 3 3
 1 2 --3
@@ -18,19 +40,9 @@ Parsing error case:
 1 2 -3 "-4 - 6"
 1 2 -3 "-4 + 6"
 1 2 -3 "-4 + 6"
+--------------------------------------------------------------
 
 Content:
 	video of big O notation
-	hashtables to verify for duplicates
-
-
-
-list of numbers
-1 100
-2 400
-3 500
-4 200
-1 not possible
-o(n)
-
+	
 ft_memset(&err, 0, sizeof(t_err))

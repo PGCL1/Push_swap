@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   min_max.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/01 19:08:11 by glacroix         ###   ########.fr       */
+/*   Created: 2023/06/01 16:09:39 by glacroix          #+#    #+#             */
+/*   Updated: 2023/06/01 19:06:49 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	main(int argc, char **argv)
+int stack_min_data(t_stack *copy)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int 		size;
-	
-	(void)argv;
-	(void)argc;
-	a = NULL;
-	b = NULL;
-	size = 0;
-	atexit(ft_leaks);
-	if (argc > 0)
+	int		min;
+
+	min = copy->data;
+	while (copy->next != NULL)
 	{
-		numbers_parsing(argc, argv, &a);
-		if (stack_sorted(a) == 0)
-		{
-			stack_clean(&a);
-			return (0);
-		}
-	 	size = ft_lstsize_pw(&a);
-		printf("\t BEFORE\n");
-		node_print_a(a);
-		stack_sort(&a, &b, size);
-		printf("\t AFTER\n");
-		node_print_a(a); 
-		stack_clean(&a);
+		if (min > copy->next->data)
+			min = copy->next->data;
+		copy = copy->next;		
 	}
-	return (0);
+	return (min);
+}
+
+int stack_max_data(t_stack *copy)
+{
+	int		max;
+
+	max = copy->data;
+	while (copy->next != NULL)
+	{
+		if (max < copy->next->data)
+			max = copy->next->data;
+		copy = copy->next;		
+	}
+	return (max);
 }

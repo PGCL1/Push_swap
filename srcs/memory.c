@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:38:46 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/31 18:23:00 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/01 13:02:24 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,4 @@ void stack_clean(t_stack **stack)
 		(*stack) = (*stack)->next;
 		free(temp);
 	}
-}
-
-t_stack *stack_create(t_stack **stack)
-{
-	ft_memset(&stack, 0, sizeof(t_stack));
-	return (stack);
 }

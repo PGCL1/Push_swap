@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/31 18:07:44 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/01 11:33:32 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,13 +140,15 @@ void	node_print_adi(t_stack *a)
 int	ft_lstsize_pw(t_stack **stack)
 {
 	int	x;
+	t_stack *temp;
 
-	x = 0;
-	if (!stack)
+	x = 1;
+	temp = (*stack);
+	if (!temp)
 		return (0);
-	while ((*stack) != NULL)
+	while (temp->next != NULL)
 	{
-		(*stack) = (*stack)->next;
+		temp = temp->next;
 		x++;
 	}
 	return (x);

@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/31 17:47:23 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:47:54 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,14 @@ Do nothing if a is empty.
 
 int	ft_push(t_stack **stack, int content)
 {
-	t_stack	*node;
-	if (ft_lstsize_pw(*stack) == 0)
-		return (-1);
-	node = malloc(sizeof(t_stack));
-	if (!node)
-		return (-1);
-	node->data = content;
-	node->next = (*stack);
-	(*stack) = node;
+	t_stack *node = ft_lstnew_pw(content); 
+	if (ft_lstsize_pw(&(*stack)) == 0)
+		(*stack) = node;
+	else
+	{
+		node->next = (*stack);
+		(*stack) = node;
+	}	
 	return (0);
 }
 
@@ -39,6 +38,7 @@ void push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_push(&(*stack_b), (*stack_a)->data) == -1)
 		return;
+	ft_putstr_fd("pa\n", 1);
 	(*stack_a) = (*stack_a)->next;
 }
 
@@ -46,6 +46,7 @@ void push_b(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_push(&(*stack_a), (*stack_b)->data) == -1)
 		return;
+	ft_putstr_fd("pb\n", 1);
 	(*stack_b) = (*stack_b)->next;
 }
 
@@ -53,7 +54,7 @@ int	ft_swap(t_stack **stack)
 {
 	t_stack	*temp;
 	
-	if (ft_lstsize_pw(*stack) < 2)
+	if (ft_lstsize_pw(&(*stack)) < 2)
 		return (-1);
 	temp = malloc(sizeof(t_stack));
 	if (!temp)
@@ -106,7 +107,7 @@ int	ft_rotate(t_stack **stack)
 	t_stack	*temp;
 	t_stack	*head;
 
-	if (ft_lstsize_pw(*stack) < 2)
+	if (ft_lstsize_pw(&(*stack)) < 2)
 		return (-1);
 	head = (*stack);
 	temp = malloc(sizeof(t_stack));
@@ -156,7 +157,7 @@ int ft_reverse_rotate(t_stack **stack)
 	t_stack	*temp;
 	t_stack	*aux;
 	
-	if (ft_lstsize_pw(*stack) < 2)
+	if (ft_lstsize_pw(&(*stack)) < 2)
 		return (-1);
 	aux = (*stack);
 	temp = malloc(sizeof(t_stack));

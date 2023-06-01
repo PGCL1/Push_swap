@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/05/31 18:18:41 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/01 19:08:22 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,13 @@ long int		ft_atol(char *str);
 int				check_duplicate(t_stack **a);
 
 /*-------------------------------SORTING---------------------------------*/
-void			stack_sort(t_stack **a);
+void			stack_sort(t_stack **a, t_stack **b, int size);
+int				stack_sorted(t_stack *copy);
+int				stack_min_data(t_stack *copy);
+int				stack_max_data(t_stack *copy);
 void			stack_sort_small_2(t_stack **a);
 void			stack_sort_small_3(t_stack **a);
+void			stack_sort_small_5(t_stack **a, t_stack **b);
 
 
 #endif
