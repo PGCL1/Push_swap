@@ -6,23 +6,20 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/02 15:20:23 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:48:14 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 //				A					3
-int	ft_push(t_stack **stack, int content)
+void ft_push(t_stack **stack, int content)
 {
-	t_stack *node = ft_lstnew_pw(content); //3
-	if (ft_lstsize_pw(&(*stack)) == 0)
-		return (-1);
-	else
-	{
-		node->next = (*stack);
-		(*stack) = node;
-	}	
-	return (0);
+	t_stack *aux;
+	
+	aux = ft_lstnew_pw(content);
+	ft_lstadd_front_pw(&(*stack), aux); //3		/* (*stack) = node; */
+	(*stack) = aux;
+	return;
 }
 
 /*
@@ -31,10 +28,11 @@ Do nothing if b is empty.
 */
 void push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_push(&(*stack_a), (*stack_b)->data) == -1)
+	if (ft_lstsize_pw(&(*stack_b)) == 0)
 		return;
+	ft_push(&(*stack_a), (*stack_b)->data);
 	ft_putstr_fd("pa\n", 1);
-	(*stack_a) = (*stack_a)->next;
+	(*stack_b) = (*stack_b)->next;
 }
 
 /*
@@ -43,10 +41,12 @@ Do nothing if a is empty.
 */
 void push_b(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_push(&(*stack_b), (*stack_a)->data) == -1)
+	if (ft_lstsize_pw(&(*stack_a)) == 0)
 		return;
+	ft_push(&(*stack_b), (*stack_a)->data);
+	printf("hola%d\n", (*stack_b)->data);
 	ft_putstr_fd("pb\n", 1);
-	(*stack_b) = (*stack_b)->next;
+	(*stack_a) = (*stack_a)->next;
 }
 
 int	ft_swap(t_stack **stack)

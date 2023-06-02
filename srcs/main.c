@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/02 15:18:05 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:24:32 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	main(int argc, char **argv)
 	t_stack		*b;
 	int 		size;
 	
-	(void)argv;
-	(void)argc;
 	a = NULL;
 	b = NULL;
 	size = 0;
@@ -35,7 +33,7 @@ int	main(int argc, char **argv)
 	 	size = ft_lstsize_pw(&a);
 		stack_sort(&a, &b, size);
 		node_print_a(a); 
-		node_print_b(b); 
+		node_print_b(b);
 		stack_clean(&a);
 	}
 	return (0);

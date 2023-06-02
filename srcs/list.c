@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/01 11:33:32 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:46:48 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	node_print_b(t_stack *stack)
 
 	temp = stack;
 	printf("-------------Stack B-------------\n");
-	while (temp != NULL)
+	while (temp->next)
 	{
 		printf("%d\n", temp->data);
 		temp = temp->next;
