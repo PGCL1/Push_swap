@@ -5,7 +5,6 @@
 5. DONE redo creation of list so that we use listaddback, listlast, listnew from libft -> to stop using global head which is forbidden and simplify code readability
 --------------------------------------------------------------
 Improvements:
-	- segmentation fault in sort.c fixed
 	- problem with checker_Mac in both cases (counting - not normal && sorting - normal)
 	- problem in parsing 
 		when passing argv[i] = '-' it works

@@ -6,26 +6,17 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/01 16:47:54 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/02 15:20:23 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-
-
-/*
-pa (push a): Take the first element at the top of b and put it at the top of a.
-Do nothing if b is empty.
-pb (push b): Take the first element at the top of a and put it at the top of b.
-Do nothing if a is empty.
-*/
-
+//				A					3
 int	ft_push(t_stack **stack, int content)
 {
-	t_stack *node = ft_lstnew_pw(content); 
+	t_stack *node = ft_lstnew_pw(content); //3
 	if (ft_lstsize_pw(&(*stack)) == 0)
-		(*stack) = node;
+		return (-1);
 	else
 	{
 		node->next = (*stack);
@@ -34,17 +25,25 @@ int	ft_push(t_stack **stack, int content)
 	return (0);
 }
 
+/*
+pa (push a): Take the first element at the top of b and put it at the top of a.
+Do nothing if b is empty.
+*/
 void push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_push(&(*stack_b), (*stack_a)->data) == -1)
+	if (ft_push(&(*stack_a), (*stack_b)->data) == -1)
 		return;
 	ft_putstr_fd("pa\n", 1);
 	(*stack_a) = (*stack_a)->next;
 }
 
+/*
+pb (push b): Take the first element at the top of a and put it at the top of b.
+Do nothing if a is empty.
+*/
 void push_b(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_push(&(*stack_a), (*stack_b)->data) == -1)
+	if (ft_push(&(*stack_b), (*stack_a)->data) == -1)
 		return;
 	ft_putstr_fd("pb\n", 1);
 	(*stack_b) = (*stack_b)->next;
