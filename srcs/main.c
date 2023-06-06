@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/02 17:24:32 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:24:42 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int argc, char **argv)
 		node_print_a(a); 
 		node_print_b(b);
 		stack_clean(&a);
+		stack_clean(&b);
 	}
 	return (0);
 }

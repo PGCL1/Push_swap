@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/02 17:48:14 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:44:33 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_push(t_stack **stack, int content)
 	t_stack *aux;
 	
 	aux = ft_lstnew_pw(content);
-	ft_lstadd_front_pw(&(*stack), aux); //3		/* (*stack) = node; */
+	ft_lstadd_front_pw(&(*stack), aux);
 	(*stack) = aux;
 	return;
 }
@@ -28,11 +28,15 @@ Do nothing if b is empty.
 */
 void push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_lstsize_pw(&(*stack_b)) == 0)
+	t_stack *temp;
+	
+	if (!(*stack_b))
 		return;
 	ft_push(&(*stack_a), (*stack_b)->data);
 	ft_putstr_fd("pa\n", 1);
+	temp = (*stack_b);
 	(*stack_b) = (*stack_b)->next;
+	free(temp);
 }
 
 /*
@@ -41,12 +45,14 @@ Do nothing if a is empty.
 */
 void push_b(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_lstsize_pw(&(*stack_a)) == 0)
+	t_stack *temp;
+	if (!(*stack_a))
 		return;
 	ft_push(&(*stack_b), (*stack_a)->data);
-	printf("hola%d\n", (*stack_b)->data);
+	temp = (*stack_a);
 	ft_putstr_fd("pb\n", 1);
 	(*stack_a) = (*stack_a)->next;
+	free(temp);
 }
 
 int	ft_swap(t_stack **stack)
@@ -103,17 +109,12 @@ void swap_both(t_stack **stack_a, t_stack **stack_b)
 
 int	ft_rotate(t_stack **stack)
 {
-	t_stack	*temp;
 	t_stack	*head;
 
 	if (ft_lstsize_pw(&(*stack)) < 2)
 		return (-1);
 	head = (*stack);
-	temp = malloc(sizeof(t_stack));
-	if (!temp)
-		return (-1);	
-	temp->data = (*stack)->data;
-	ft_lstadd_back_pw(stack, temp);
+	ft_lstadd_back_pw(stack, ft_lstnew_pw((*stack)->data));
 	(*stack) = (*stack)->next;
 	free(head);
 	return (0);

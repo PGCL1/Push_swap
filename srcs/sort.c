@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:12:28 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/02 17:47:42 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/06 15:41:42 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ void stack_sort_small_2(t_stack **a)
 
 void stack_sort_small_3(t_stack **a)
 {
-	if (stack_sorted((*a)) == 0)
-		return;
 	if (stack_min_data(*a) == (*a)->data)
 	{
 		swap_a(&(*a));
@@ -90,6 +88,18 @@ void stack_sort_small_3(t_stack **a)
 
 void stack_sort_small_5(t_stack **a, t_stack **b)
 {
-	push_b((&(*a)), (&(*b)));
-	push_b((&(*a)), (&(*b)));
+	int index;
+
+	index = stack_min_position(*a);
+	stack_push_min(index, &(*a), &(*b));
+	if (stack_sorted(*a) == 0)
+		push_a(&(*a), &(*b));
+	else
+	{
+		index = stack_min_position(*a);
+		stack_push_min(index, &(*a), &(*b));
+		stack_sort_small_3(&(*a));
+		push_a(&(*a), &(*b));
+		push_a(&(*a), &(*b));	
+	}
 }
