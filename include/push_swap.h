@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/06 15:36:22 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:04:31 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 
 typedef struct t_stack {
 	int				data;
+	int				index;
 	struct t_stack	*next;
 }				t_stack;
 
@@ -71,7 +72,6 @@ void			ft_lstadd_back_pw(t_stack **lst, t_stack *new);
 void			ft_lstadd_front_pw(t_stack **lst, t_stack *new);
 int				ft_lstsize_pw(t_stack **lst);
 
-
 /*-------------------------------PARSING---------------------------------*/
 void			numbers_parsing(int argc, char **argv, t_stack **a);
 int				numbers_over(long int result);
@@ -86,7 +86,10 @@ int				stack_sorted(t_stack *copy);
 void			stack_sort_small_2(t_stack **a);
 void			stack_sort_small_3(t_stack **a);
 void			stack_sort_small_5(t_stack **a, t_stack **b);
-
+void			stack_sort_big_100(t_stack **a, t_stack **b);
+void			stack_sort_big_500(t_stack **a, t_stack **b);
+void			ft_swap_int(int *x, int *y);
+void 			value_by_index(int **stacks, int size);
 /*------------------------------ARITHMETIC---------------------------------*/
 int				stack_min_position(t_stack *stack);
 void			stack_push_min(int i, t_stack **a, t_stack **b);

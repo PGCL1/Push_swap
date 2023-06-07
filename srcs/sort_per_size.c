@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_per_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:12:28 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/06 15:41:42 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:19:16 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,33 +31,6 @@
  *	 	if number less than key - 13 rotate b
  *             until stack a is empty (editado) 
 */
-
-void stack_sort(t_stack **a, t_stack **b, int size)
-{
-	if (size < 4)
-		(void)(*b);
-	else
-		(*b) = malloc(sizeof(t_stack));
-	if (size == 2)
-		stack_sort_small_2(&(*a));
-	else if (size == 3)
-		stack_sort_small_3(&(*a));
-	else if (size == 5)
-		stack_sort_small_5((&(*a)), (&(*b)));
-	//stack_clean(&(*b));
-	/*...........to be continued........*/
-}
-
-int stack_sorted(t_stack *copy)
-{
-	while (copy->next != NULL)
-	{
-		if (copy->data > copy->next->data)
-			return (1);
-		copy = copy->next;
-	}
-	return (0);
-}
 
 void stack_sort_small_2(t_stack **a)
 {
@@ -103,3 +76,9 @@ void stack_sort_small_5(t_stack **a, t_stack **b)
 		push_a(&(*a), &(*b));	
 	}
 }
+
+void stack_sort_big_100(t_stack **a, t_stack **b);
+
+
+void stack_sort_big_500(t_stack **a, t_stack **b);
+

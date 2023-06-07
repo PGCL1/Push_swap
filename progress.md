@@ -3,11 +3,11 @@
 3. DONE no leaks 
 4. DONE corrected error function (if string is passed with a lonely sign, throws error)
 5. DONE redo creation of list so that we use listaddback, listlast, listnew from libft -> to stop using global head which is forbidden and simplify code readability
+6. DONE Parsing
 --------------------------------------------------------------
 Improvements:
 	- problem with checker_Mac in both cases (counting - not normal && sorting - normal)
-	- problem in parsing 
-		when passing argv[i] = '-' it works
+
 --------------------------------------------------------------
 
 Learning:
