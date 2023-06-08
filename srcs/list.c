@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 20:46:04 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/08 17:47:15 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/08 19:34:30 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@
 void	ft_lstadd_back_pw(t_stack **lst, t_stack *new)
 {
 	if (!*lst)
-	{
 		*lst = new;
-		new->index = 0;
-	}
 	else
 		ft_lstlast_pw(*lst)->next = new;
 }
@@ -57,8 +54,8 @@ t_stack	*ft_lstnew_pw(int content)
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
+	ft_memset(node, 0, sizeof(t_stack));
 	node->data = content;
-	node->next = NULL;
 	return (node);
 }
 
@@ -78,12 +75,8 @@ t_stack	*ft_lstlast_pw(t_stack *lst)
 	temp = lst;
 	if (!lst)
 		return (NULL);
-	while (temp)
-	{
-		if (!(temp->next))
-			return (temp);
+	while (temp->next)
 		temp = temp->next;
-	}
 	return (temp);
 }
 

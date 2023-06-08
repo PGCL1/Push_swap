@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/06/08 17:36:37 by glacroix         ###   ########.fr        #
+#    Updated: 2023/06/08 18:24:16 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ OBJS		= $(SRCS:%.c=objs/%.o)
 # **************************************************************************** #
 LIBFT		= libft/libft.a
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -fsanitize=address
 CFLAGS		+= -I include
 CFLAGS		+= -I libft -g3
 #DEGUB		= -g3 -fsanitize=address
