@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/06/07 18:14:20 by glacroix         ###   ########.fr        #
+#    Updated: 2023/06/08 17:36:37 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS		= srcs/main.c \
 				srcs/sorting.c\
 				srcs/stack_arithmetic.c\
 				srcs/sort_per_size.c\
+				srcs/test.c\
 
 OBJS		= $(SRCS:%.c=objs/%.o)
 
