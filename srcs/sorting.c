@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:17:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/07 18:14:03 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/09 18:06:53 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ void stack_sort(t_stack **a, t_stack **b, int size)
 		stack_sort_small_3(&(*a));
 	else if (size == 5)
 		stack_sort_small_5((&(*a)), (&(*b)));
-	/* else if (size == 100)
+	else
+		radix_sort((&(*a)), (&(*b)), size);
 	
-	else if (size == 500)
-	 */
-	stack_clean(&(*b));
+	/* stack_clean(&(*b)); */
 	/*...........to be continued........*/
 }
 

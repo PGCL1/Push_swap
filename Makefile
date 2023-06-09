@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/06/08 18:24:16 by glacroix         ###   ########.fr        #
+#    Updated: 2023/06/09 17:49:25 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRCS		= srcs/main.c \
 				srcs/sorting.c\
 				srcs/stack_arithmetic.c\
 				srcs/sort_per_size.c\
-				srcs/test.c\
+				srcs/data2index.c\
+				srcs/radix.c\
 
 OBJS		= $(SRCS:%.c=objs/%.o)
 
@@ -44,7 +45,7 @@ OBJS		= $(SRCS:%.c=objs/%.o)
 # **************************************************************************** #
 LIBFT		= libft/libft.a
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -fsanitize=address
+CFLAGS		= -Wall -Werror -Wextra
 CFLAGS		+= -I include
 CFLAGS		+= -I libft -g3
 #DEGUB		= -g3 -fsanitize=address

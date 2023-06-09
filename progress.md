@@ -7,6 +7,7 @@
 --------------------------------------------------------------
 Improvements:
 	- problem with checker_Mac in both cases (counting - not normal && sorting - normal)
+	- conflict with data and index in stack (check movements formulas)
 
 --------------------------------------------------------------
 

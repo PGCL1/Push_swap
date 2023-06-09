@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   data2index.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/09 18:05:27 by glacroix         ###   ########.fr       */
+/*   Created: 2023/06/09 17:01:05 by glacroix          #+#    #+#             */
+/*   Updated: 2023/06/09 17:01:17 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	main(int argc, char **argv)
+void data2index(t_stack **a)
 {
-	t_stack		*a;
-	t_stack		*b;
-	int 		size;
-	
-	a = 0;
-	b = 0;
-/* 	atexit(ft_leaks); */
- 	if (argc > 0)
+	t_stack *first;
+	t_stack *second;
+
+	first = (*a);
+	while (first->next)
 	{
-		numbers_parsing(argc, argv, &a);
-		data2index(&a);
-		if (stack_sorted(a) == 0)
+		second = first->next;
+		while (second)
 		{
-			stack_clean(&a);
-			return (0);
+			if (first->data < second->data)
+				second->index++;
+			else if (first->data > second->data)
+				first->index++;
+			second = second->next;
 		}
-	 	size = ft_lstsize_pw(&a);
-		stack_sort(&a, &b, size);
-		node_print_a(a);
-		stack_clean(&a);
+		first = first->next;
 	}
-	return (0);
 }
