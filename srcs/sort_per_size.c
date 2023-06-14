@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:12:28 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/07 15:19:16 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/14 20:13:46 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,21 @@ void stack_sort_small_3(t_stack **a)
 	return ;
 }
 
+void stack_sort_small_4(t_stack **a, t_stack **b)
+{
+	int index;
+
+	index = stack_min_position(*a);
+	stack_push_min(index, &(*a), &(*b));
+	if (stack_sorted(*a) == 0)
+		push_a(&(*a), &(*b));
+	else
+	{
+		stack_sort_small_3(&(*a));
+		push_a(&(*a), &(*b));
+	}
+}
+
 void stack_sort_small_5(t_stack **a, t_stack **b)
 {
 	int index;
@@ -69,16 +84,8 @@ void stack_sort_small_5(t_stack **a, t_stack **b)
 		push_a(&(*a), &(*b));
 	else
 	{
-		index = stack_min_position(*a);
-		stack_push_min(index, &(*a), &(*b));
-		stack_sort_small_3(&(*a));
+		stack_sort_small_4((&(*a)), (&(*b)));
 		push_a(&(*a), &(*b));
-		push_a(&(*a), &(*b));	
 	}
 }
-
-void stack_sort_big_100(t_stack **a, t_stack **b);
-
-
-void stack_sort_big_500(t_stack **a, t_stack **b);
 

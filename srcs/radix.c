@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:35:23 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/09 18:05:05 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/14 20:09:01 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int max_bits_stack(t_stack **stack)
 			max = temp->index;
 		temp = temp->next;
 	}
-	printf("Max is %d\n", max);
 	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
@@ -43,7 +42,7 @@ void	radix_sort(t_stack **a, t_stack **b, int size)
 	i = -1;
 	max_bits = max_bits_stack(&(*a));
 	temp = (*a);
-	printf("NUm is %d index is %d\n", temp->data, temp->index);
+	//printf("NUm is %d index is %d\n", temp->data, temp->index);
 	while (++i < max_bits)
 	{
 		j = -1;
