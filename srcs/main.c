@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/09 18:05:27 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/16 22:18:44 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 	{
 		numbers_parsing(argc, argv, &a);
 		data2index(&a);
+		dupindex(&a);
 		if (stack_sorted(a) == 0)
 		{
 			stack_clean(&a);

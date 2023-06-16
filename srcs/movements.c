@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 19:02:22 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/09 18:08:19 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/16 22:12:16 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,10 +120,19 @@ int	ft_rotate(t_stack **stack)
 	return (0);
 }
 
-/* 
-ra (rotate a): Shift up all elements of stack a by 1.
-The first element becomes the last one. 
-*/
+int	ft_rotate_radix(t_stack **stack)
+{
+	t_stack	*head;
+
+	if (ft_lstsize_pw(&(*stack)) < 2)
+		return (-1);
+	head = (*stack);
+	ft_lstadd_back_pw(stack, ft_lstnew_pw((*stack)->data));
+	(*stack) = (*stack)->next;
+	free(head);
+	return (0);
+}
+
 void rotate_a(t_stack **stack)
 {
 	if (ft_rotate(&(*stack)) == -1)

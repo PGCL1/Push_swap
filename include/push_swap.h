@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/14 20:10:02 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/16 22:20:43 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,6 @@ void			stack_sort_small_2(t_stack **a);
 void			stack_sort_small_3(t_stack **a);
 void			stack_sort_small_4(t_stack **a, t_stack **b);
 void			stack_sort_small_5(t_stack **a, t_stack **b);
-void			stack_sort_big_100(t_stack **a, t_stack **b);
-void			stack_sort_big_500(t_stack **a, t_stack **b);
 void			ft_swap_int(int *x, int *y);
 void			data2index(t_stack **a);
 void			radix_sort(t_stack **a, t_stack **b, int size);
@@ -98,5 +96,6 @@ int				stack_min_position(t_stack *stack);
 void			stack_push_min(int i, t_stack **a, t_stack **b);
 int				stack_min_data(t_stack *copy);
 int				stack_max_data(t_stack *copy);
+void			dupindex(t_stack **stack);
 
 #endif
