@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:35:23 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/16 22:22:03 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/17 10:07:31 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void dupindex(t_stack **stack)
 		temp->data = temp->index;
 		temp = temp->next;
 	}
+	temp->data = temp->index;
 }
 
 static int max_bits_stack(t_stack **stack)
@@ -65,7 +66,7 @@ void	radix_sort(t_stack **a, t_stack **b, int size)
 			else
 				push_b(&(*a), &(*b));
 		}
-		while (ft_lstsize_pw(&(*b)) != 0)
+		while ((*b) != 0)
 			push_a(&(*a), &(*b));
 	}
 }
