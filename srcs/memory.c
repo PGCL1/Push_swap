@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:38:46 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/01 13:02:24 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 00:31:53 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_leaks(void)
 	system("leaks -q push_swap");
 }
 
-void stack_clean(t_stack **stack)
+void	stack_clean(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack;
 	while (*stack != NULL)

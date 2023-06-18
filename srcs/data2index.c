@@ -6,16 +6,16 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:01:05 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/09 17:01:17 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 00:32:07 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void data2index(t_stack **a)
+void	data2index(t_stack **a)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	first = (*a);
 	while (first->next)

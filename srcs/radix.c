@@ -6,15 +6,15 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:35:23 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/17 10:07:31 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 00:46:26 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void dupindex(t_stack **stack)
+void	dupindex(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = (*stack);
 	while (temp->next)
@@ -25,11 +25,11 @@ void dupindex(t_stack **stack)
 	temp->data = temp->index;
 }
 
-static int max_bits_stack(t_stack **stack)
+static int	max_bits_stack(t_stack **stack)
 {
-	t_stack *temp;
-	int max;
-	int max_bits;
+	t_stack	*temp;
+	int		max;
+	int		max_bits;
 
 	temp = (*stack);
 	max = temp->index;

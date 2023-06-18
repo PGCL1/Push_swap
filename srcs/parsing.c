@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:39:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/08 18:33:11 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 00:28:49 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ long int	ft_atol(char *str)
 
 int	check_duplicate(t_stack **a)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	first = (*a);
 	while (first->next != NULL)
@@ -46,11 +46,11 @@ int	check_duplicate(t_stack **a)
 		second = first->next;
 		while (second != NULL)
 		{
-			if (first->data == second->data)	
+			if (first->data == second->data)
 				return (1);
 			second = second->next;
 		}
-		first = first->next;	
+		first = first->next;
 	}
 	return (0);
 }
