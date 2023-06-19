@@ -7,7 +7,6 @@
 --------------------------------------------------------------
 Improvements:
 	- problem with checker_Mac in both cases (counting - not normal && sorting - normal)
-	- conflict with data and index in stack (check movements formulas)
 
 --------------------------------------------------------------
 
@@ -29,17 +28,6 @@ int stack_min_data(t_stack *copy)
 other function --> if (stack_min_data(*a) == (*a)->data)
 Here we are sending a copy of (*a) to stack_min_data
 if we sent (&(*a)) we would be sending the reference of (*a) and therefore be able to modify the contents of (*a);
-
---------------------------------------------------------------
-Parsing error case:
-1 2 3 3
-1 2 --3
-1 2 -+3
-1 2 ++3
-1 2 +-3
-1 2 -3 "-4 - 6"
-1 2 -3 "-4 + 6"
-1 2 -3 "-4 + 6"
 --------------------------------------------------------------
 
 Content:

@@ -6,7 +6,7 @@
 #    By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 19:44:40 by glacroix          #+#    #+#              #
-#    Updated: 2023/06/09 17:49:25 by glacroix         ###   ########.fr        #
+#    Updated: 2023/06/19 12:18:51 by glacroix         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,15 @@ SRCS		= srcs/main.c \
 				srcs/memory.c\
 				srcs/parsing.c\
 				srcs/error_check.c\
-				srcs/movements.c\
 				srcs/sorting.c\
 				srcs/stack_arithmetic.c\
 				srcs/sort_per_size.c\
 				srcs/data2index.c\
 				srcs/radix.c\
+				srcs/movements/mov_push.c\
+				srcs/movements/mov_swap.c\
+				srcs/movements/mov_reverse_rotate.c\
+				srcs/movements/mov_rotate.c\
 
 OBJS		= $(SRCS:%.c=objs/%.o)
 
@@ -62,6 +65,7 @@ ${NAME}: objs ${OBJS}
 # **************************************************************************** #
 objs:
 	@mkdir -p objs/srcs
+	@mkdir -p objs/srcs/movements
 
 objs/%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@

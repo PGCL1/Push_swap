@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/16 22:20:43 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 19:21:20 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,6 @@ void			ft_leaks(void);
 void			stack_clean(t_stack **stack);
 t_stack			*stack_create(t_stack *stack);
 
-/*---------------------------------PRINT---------------------------------*/
-void			node_print(t_stack *stack);
-void			node_print_a(t_stack *stack);
-void			node_print_b(t_stack *stack);
-void			node_print_adi(t_stack *a);
-void			node_reverse(t_stack *list);
-
 /*---------------------------LIST FUNCTIONS-----------------------------*/
 t_stack			*ft_lstnew_pw(int content);
 t_stack			*ft_lstlast_pw(t_stack *lst);
@@ -92,8 +85,9 @@ void			data2index(t_stack **a);
 void			radix_sort(t_stack **a, t_stack **b, int size);
 
 /*------------------------------ARITHMETIC---------------------------------*/
-int				stack_min_position(t_stack *stack);
+int				stack_min_position(t_stack *stack, int min);
 void			stack_push_min(int i, t_stack **a, t_stack **b);
+void			stack_push_5min(int i, t_stack **a, t_stack **b);
 int				stack_min_data(t_stack *copy);
 int				stack_max_data(t_stack *copy);
 void			dupindex(t_stack **stack);

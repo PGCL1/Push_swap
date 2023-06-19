@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/19 00:36:29 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 19:22:17 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int	main(int argc, char **argv)
 
 	a = 0;
 	b = 0;
-	atexit(ft_leaks);
-	if (argc > 0)
+	if (argc > 1)
 	{
+		if (ft_strlen(*(argv + 1)) == 0)
+			return (0);
 		numbers_parsing(argc, argv, &a);
 		data2index(&a);
 		dupindex(&a);

@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 15:17:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/19 00:29:41 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 19:20:47 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 void	stack_sort(t_stack **a, t_stack **b, int size)
 {
 	if (size < 4)
-		(void)(*b);
-	else
 	{
-		(*b) = malloc(sizeof(t_stack));
-		(*b) = NULL;
+		(void)(*b);
 		if (size == 2)
 			stack_sort_small_2(&(*a));
 		else if (size == 3)
 			stack_sort_small_3(&(*a));
-		else if (size == 4)
+	}
+	else
+	{
+		(*b) = NULL;
+		if (size == 4)
 			stack_sort_small_4((&(*a)), (&(*b)));
 		else if (size == 5)
 			stack_sort_small_5((&(*a)), (&(*b)));
 		else
 			radix_sort((&(*a)), (&(*b)), size);
-		stack_clean(&(*b));
 	}
 }
 
