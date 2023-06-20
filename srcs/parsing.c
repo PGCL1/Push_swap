@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:39:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/19 00:28:49 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/20 13:18:19 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	check_duplicate(t_stack **a)
 	t_stack	*second;
 
 	first = (*a);
-	while (first->next != NULL)
+	while (first && first->next != NULL)
 	{
 		second = first->next;
 		while (second != NULL)
@@ -64,9 +64,9 @@ void	numbers_parsing(int argc, char **argv, t_stack **a)
 	i = 0;
 	while (++i < argc)
 	{
-		args = ft_split(argv[i], 32);
 		j = -1;
-		while (args[++j])
+		args = ft_split(argv[i], 32);
+		while (args != NULL && args[++j])
 		{
 			if (numbers_error(args[j]) || numbers_over(ft_atol(args[j])))
 			{

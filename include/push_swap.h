@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/19 19:21:20 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/19 19:47:24 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void			reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 void			free_pointer2pointer(char **ptr);
 void			ft_leaks(void);
 void			stack_clean(t_stack **stack);
-t_stack			*stack_create(t_stack *stack);
 
 /*---------------------------LIST FUNCTIONS-----------------------------*/
 t_stack			*ft_lstnew_pw(int content);

@@ -6,11 +6,12 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 15:30:35 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/19 19:22:17 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/20 15:20:24 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 
 int	main(int argc, char **argv)
 {
@@ -25,6 +26,8 @@ int	main(int argc, char **argv)
 		if (ft_strlen(*(argv + 1)) == 0)
 			return (0);
 		numbers_parsing(argc, argv, &a);
+		if (a == NULL)
+			return (0);
 		data2index(&a);
 		dupindex(&a);
 		if (stack_sorted(a) == 0)

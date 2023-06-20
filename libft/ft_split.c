@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:37:27 by glacroix          #+#    #+#             */
-/*   Updated: 2023/04/11 17:26:33 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/20 13:10:30 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_split(char *s, char c)
 		return (NULL);
 	j = 0;
 	nb_words = ft_words(s, c);
-	token = (char **)malloc(sizeof(char *) * (nb_words + 1));
+	token = malloc(sizeof(char *) * (nb_words + 1));
 	if (!token)
 		return (NULL);
 	while (j < nb_words)
