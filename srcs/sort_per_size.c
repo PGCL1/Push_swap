@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:12:28 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/20 14:58:30 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:48:15 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,3 @@ void	stack_sort_small_5(t_stack **a, t_stack **b)
 		push_a(&(*a), &(*b));
 	}
 }
-

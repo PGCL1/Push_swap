@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 19:46:07 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/19 19:47:24 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:52:59 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int				numbers_verified(char *str);
 int				numbers_error(char *str);
 long int		ft_atol(char *str);
 int				check_duplicate(t_stack **a);
+int				over_limit(char *str);
 
 /*-------------------------------SORTING---------------------------------*/
 void			stack_sort(t_stack **a, t_stack **b, int size);

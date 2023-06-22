@@ -6,7 +6,7 @@
 /*   By: glacroix <glacroix@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 20:39:29 by glacroix          #+#    #+#             */
-/*   Updated: 2023/06/20 13:18:19 by glacroix         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:52:43 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ long int	ft_atol(char *str)
 	signage = 0;
 	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
 		i++;
+	if (over_limit(str) == 1)
+		return (2147483648);
 	if (str[i] == 43 || str[i] == 45)
 	{
 		if (str[i++] == 45)
@@ -33,6 +35,23 @@ long int	ft_atol(char *str)
 	if (signage)
 		return ((long int)result * -1);
 	return ((long int) result);
+}
+
+int	over_limit(char *str)
+{
+	int	i;
+	int	max_num;
+
+	i = 0;
+	while ((str[i] > 8 && str[i] < 14) || str[i] == 32)
+		i++;
+	max_num = 0;
+	while (str && str[max_num])
+		max_num++;
+	max_num = max_num - i - 1;
+	if (max_num > 10)
+		return (1);
+	return (0);
 }
 
 int	check_duplicate(t_stack **a)
