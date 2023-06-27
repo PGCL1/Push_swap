@@ -18,10 +18,12 @@ To try out the algorithm for yourself, you should:
 > git clone git@github.com:PGCL1/Push_swap.git && cd Push_swap
 > make
 ```
+
+Here's an example of what you could try out:
 ```
 ./push_swap 50 3 6 -2
 ```
 
-To generate a random number list, you could also go here:
-[Random Numbers Generator](https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php)
+Or you could also go here:
+[Random Numbers Generator](https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php) - to generate your number list, it will be faster.
 
