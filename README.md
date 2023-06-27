@@ -1,6 +1,6 @@
 # Push_swap Project
 
-This project revolved around creating an algorithm to sort a series of numbers in the fewest movements possible. The serie of numbers could range from 3, 5, 100 and 500. The algorithm however has to be able to sort n numbers, while 1 <= n >= 500.
+This project revolved around creating an algorithm to sort a series of numbers in the fewest movements possible. The serie of numbers could range from 3, 5, 100 and 500. The algorithm however has to be able to sort n numbers, while 1 <= n <= 500.
 
 To do, we had to make use of stacks and different operations that were predifined in the subject; namely the push operation, the swap operation, the rotate operation and the reverse rotate operation. I also had to implement a method where the first arguments passed to the program would be the first elements in the stack, in other words the first arguments passed would be the top of the stack.
 
