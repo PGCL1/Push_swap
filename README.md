@@ -1,39 +1,27 @@
-**Linked Lists**
+# Push_swap Project
 
-There are various types of data structures and we have for now seen arrays. Today, we start a new chapter exploring what are linked lists. Linked lists are similar to arrays as they can be used to store list, yet they differ in the way they used memory to store information.
+This project revolved around creating an algorithm to sort a series of numbers in the fewest movements possible. The serie of numbers could range from 3, 5, 100 and 500. The algorithm however has to be able to sort n numbers, while 1 <= n >= 500.
 
-Arrays need continuous bites of memory stored sequentiently whereas linked lists can have scattered memory usage. As each node in a linked list stores the address of the next node, each element of the list can be addressed sequentienlly.
+To do, we had to make use of stacks and different operations that were predifined in the subject; namely the push operation, the swap operation, the rotate operation and the reverse rotate operation. I also had to implement a method where the first arguments passed to the program would be the first elements in the stack, in other words the first arguments passed would be the top of the stack.
 
-There are 3 types of linked lists:
-- single linked list (each node stores a data value and the address of the next node or NULL if the next node doesn't exist)
-- doubly linked list (each node stores a data value and the address of the previous node and next node or NULL if the next node doesn't exist)
-- circular linked list (the last node is linked to the first node)
+## Project Breakdown
 
-In order to access the first node of the list, we need a pointer that points to the first element of the linked list. This pointer is often called the "head". This pointer only contains the address of the first node of the list.
+For this project, I made usage of singly linked list as this data structure would enable to resize my  list easily. Using arrays in this project will oblige for a constant copy and resizing as elements cannot be added freely to the data structure, because memory needs to be allocated for the array as a whole when initializing. With linked list, one can add a node or remove a node, due to the way linked lists node are not continous in memory.
 
+In terms of the algorithm chosen, I used the radix MSB method, where I first calculated the most significant bit and rotated all big numbers to the bottom of stack A and pushed all the small numbers to stack B. After all bits of a digit where processed for all arguments, all the numbers would be pushed back to the stack A, I would then look at the next digit on the right. This was a rince and repeat process until all the digits of all arguments where processed. At the end of it, all arguments would be sorted.
 
-***IMPORTANT***
-When you use a linked list, you can make copies of it and use it for different endeavors. Whereas, if you would use a struct and use it for different things, you would be constantly changing your struct; resulting into errors.
+## Installation
 
-Linked lists can be use in such way because they are self referencing; when you create a copy of a linked list: the structure is the same but the linked lists you created are different.
+To try out the algorithm for yourself, you should:
 
-**Pointers**
+```
+> git clone git@github.com:PGCL1/Push_swap.git && cd Push_swap
+> make
+```
+```
+./push_swap 50 3 6 -2
+```
 
-When we access a pointer variable (i.e. *p):
-	if we do *p = X we are dereferencing the pointer and assigning to it the value X
-	if we do p = &X we are assigning to the pointer p the address of X
+To generate a random number list, you could also go here:
+[Random Numbers Generator](https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php)
 
-**Application's Memory**
-
-Heap (not fixed)		free storage 
-Stack (fixed)			stores all the function execution variables
-Static/Global (fixed)	stores the variables that will live during the entire program
-Code (fixed)			stores the program's instructions
-
-**Stacks**
-
-A stack is a list or collection with the restriction that insertion and deletion can be performed only from one end called the top. Stacks are used for recursion and function calls in a program. Another application of stacks is used for undo in a text editor.
-	Operation:
-		push is insertion
-		pop is removing the most recent item from the stack
-		top looks for the top element of the stack
